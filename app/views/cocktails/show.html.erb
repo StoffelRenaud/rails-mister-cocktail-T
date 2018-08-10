@@ -1,13 +1,14 @@
 
-<div class="container">
+<div class="container" style = "padding-top: 70px;">
   <div class="row">
-    <div class="col-xs-4">
+    <div class="col-xs-5">
       Ingrédients :
       <% @cocktail.ingredients.each do |ingredient| %>
         <%= ingredient.name %>
       <% end %>
+      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
     </div>
-    <div class="col-xs-8">
+    <div class="col-xs-7">
       Quantités :
       <% @cocktail.doses.each do |dose| %>
         <%= dose.description %>
@@ -17,12 +18,11 @@
 </div>
 
 <%= select_tag "timezone", options_from_collection_for_select(
-      ActiveSupport::TimeZone.all.
-        map { |tz| tz.tzinfo }.
-        sort_by { |tzinfo| tzinfo.name },
-      :name, :name),
+     Ingredient.all,
+      :id, :name),
       class: 'select2' %>
 
 <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %>
-<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
-<button id="sweet-alert-demo" class="btn btn-primary">Click me!</button>
+
+
+

@@ -1,13 +1,14 @@
 <div class="home-banner">
   <h1>Cocktail</h1>
-  <h2>...but sans Thom Cruise</h2>
 </div>
 
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-md-4">
-        <%= link_to cocktail.name, cocktail_path(cocktail), class: "card" %>
+        <div class="card">
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </div>
       </div>
     <% end %>
   </div>
