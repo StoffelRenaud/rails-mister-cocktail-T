@@ -10,6 +10,10 @@
 console.log('Hello World from Webpacker')
 
 import 'bootstrap';
+import '../components/select2';
 
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 initUpdateNavbarOnScroll();
+
+import { bindSweetAlertButtonDemo } from '../components/banner';
+bindSweetAlertButtonDemo();

@@ -32,7 +32,7 @@ class DosesController < ApplicationController
   private
 
   def params_dose
-    params.require(:dose).permit(:description, :ingredient_id)
+    params.require(:dose).permit(:description, :ingredient_id, :photo)
   end
 
   def set_cocktail

@@ -6,8 +6,8 @@
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12">
-        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      <div class="col-xs-12 col-md-4">
+        <%= link_to cocktail.name, cocktail_path(cocktail), class: "card" %>
       </div>
     <% end %>
   </div>
