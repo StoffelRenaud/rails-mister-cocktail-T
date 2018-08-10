@@ -1,10 +1,14 @@
 .btn {
   border-radius: 12px;
-  color: black;
+  color: white;
   border: 1px solid;
   &:hover {
-    background-color: #5E503F;
-    color: white;
+    background-color: #E3D985;
+    color: #3A435E;
     transition: 1s;
   }
+}
+
+.btn-new {
+  background-color: #323232;
 }

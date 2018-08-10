@@ -1,11 +1,12 @@
 .card {
   height: 250px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  // text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
-  color: white;
   position: relative;
   margin: 20px 0;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+  border-radius: 3px;
 }
 .card-user {
   position: absolute;
@@ -25,6 +26,15 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
+  font-size: 32px;
+  color: white;
+  a {
+    text-transform: uppercase;
+  }
+  &:hover {
+    transition: 1s;
+    text-decoration: none;
+  }
 }
 .card-description h2 {
   font-size: 24px;
