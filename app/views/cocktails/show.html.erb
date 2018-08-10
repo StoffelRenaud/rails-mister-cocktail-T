@@ -2,27 +2,30 @@
 <div class="container" style = "padding-top: 70px;">
   <div class="row">
     <div class="col-xs-5">
-      Ingrédients :
+      <p>Ingrédients :</p>
+      <ul>
       <% @cocktail.ingredients.each do |ingredient| %>
-        <%= ingredient.name %>
+        <li><%= ingredient.name %></li>
       <% end %>
-      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+      </ul>
+      <p>Quantités :</p>
+      <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li><%= dose.description %></li>
+      <% end %>
+      </ul>
+      <%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'btn' %>
     </div>
     <div class="col-xs-7">
-      Quantités :
-      <% @cocktail.doses.each do |dose| %>
-        <%= dose.description %>
-      <% end %>
+      <h3><%= @cocktail.name %></h3>
+      <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
     </div>
   </div>
 </div>
 
-<%= select_tag "timezone", options_from_collection_for_select(
-     Ingredient.all,
-      :id, :name),
-      class: 'select2' %>
 
-<%= link_to 'Add a dose', new_cocktail_dose_path(@cocktail) %>
+
+
 
 
 

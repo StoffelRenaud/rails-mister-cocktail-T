@@ -1,9 +1,16 @@
+<h1>Add a cocktail</h1>
 
 <div class="container" style = "padding-top: 70px;">
   <%= simple_form_for @cocktail do |f| %>
     <%= f.input :name %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
+    <%= select_tag :ingredient, options_from_collection_for_select(
+     Ingredient.all,
+      :id, :name),
+      class: 'select2' %>
     <%= f.button :submit %>
   <% end %>
 </div>
+
+
