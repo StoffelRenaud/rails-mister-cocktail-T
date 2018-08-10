@@ -1,8 +1,14 @@
-<%= link_to 'Add a cocktail', new_cocktail_path %>
-<h1>Mr.Cocktails</h1>
+<div class="home-banner">
+  <h1>Cocktail</h1>
+  <h2>...but sans Thom Cruise</h2>
+</div>
 
 <div class="container">
-  <% @cocktails.each do |cocktail| %>
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
-  <% end %>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-xs-12">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </div>
+    <% end %>
+  </div>
 </div>
